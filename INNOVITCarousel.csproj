@@ -5,15 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\Bird.jpg" />
-    <None Include="wwwroot\images\can.jpg" />
-    <None Include="wwwroot\images\purpleFlower.jpg" />
-    <None Include="wwwroot\images\sales.jpg" />
-    <None Include="wwwroot\images\yellowFlower.jpg" />
+    <Content Include="C:\Users\gertrude\Desktop\Index.cshtml" Link="Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
   </ItemGroup>
 

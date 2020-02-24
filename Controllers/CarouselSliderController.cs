@@ -1,11 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿
+
 using INNOVITCarousel.Models;
-using System.Data.SqlClient;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Web;
+
+
 
 namespace INNOVITCarousel.Controllers
 {
@@ -15,7 +20,7 @@ namespace INNOVITCarousel.Controllers
         {
             return View();
         }
-        /*
+        
         [HttpGet]
         public ActionResult UploadSliderImage()
         {
@@ -39,7 +44,36 @@ namespace INNOVITCarousel.Controllers
                 }
             }
             return View(sliderimages);
-        }*/
+        }
+
+        /*
+       
+        [HttpPost]
+        public ActionResult UploadSliderImage(string fileupload)
+        {
+            if (fileupload != null)
+            {
+                string fileName = Path.GetFileName(fileupload.Fil . FileName);
+                int fileSize = fileupload.ContentLength;
+                int Size = fileSize / 1000;
+                fileupload.SaveAs(Server.MapPath("~/SliderImages/" + fileName));
+
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(CS))
+                {
+                    SqlCommand cmd = new SqlCommand("spAddNewSliderImage", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@Name", fileName);
+                    cmd.Parameters.AddWithValue("@FileSize", Size);
+                    cmd.Parameters.AddWithValue("FilePath", "~/SliderImages/" + fileName);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return RedirectToAction("UploadSliderImage");
+        }
+
+    */
 
 
 
@@ -55,3 +89,4 @@ namespace INNOVITCarousel.Controllers
 
 
 }
+ 
