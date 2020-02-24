@@ -5,7 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\SystemSettingController.cs" />
+    <Compile Remove="Models\SystemSetting.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\Indexold.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="C:\Users\gertrude\Desktop\Index.cshtml" Link="Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="INNOVITCarousel.sln" />
   </ItemGroup>
 
   <ItemGroup>

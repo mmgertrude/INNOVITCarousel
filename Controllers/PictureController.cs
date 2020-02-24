@@ -19,12 +19,10 @@ namespace INNOVITCarousel.Controllers
             _context = context;
         }
 
-        public ActionResult Index()
+        // GET: pictures
+        public async Task<IActionResult> Index()
         {
-            var pictureList = new List<Picture>();
-            
-            return View(pictureList);
+            return View(await _context.pictures.ToListAsync());
         }
-
     }
 }
